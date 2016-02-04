@@ -10,12 +10,16 @@ namespace ASP5API.Controllers
     [Route("api/[controller]")]
     public class ValuesController : Controller
     {
+        //Dependency injection!
+        //https://davidzych.com/dependency-injection-in-asp-net-vnext/
+
         private DataEventRecordContext _context;
 
         public ValuesController(DataEventRecordContext context)
         {
             _context = context;
         }
+
         // GET: api/values
         [HttpGet]
         public IEnumerable<DataEventRecord> Get()
@@ -30,9 +34,9 @@ namespace ASP5API.Controllers
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public DataEventRecord Get(int id)
         {
-            return "value";
+            return _context.DataEventRecords.Where(d => d.Id == id).FirstOrDefault();
         }
 
         // POST api/values
