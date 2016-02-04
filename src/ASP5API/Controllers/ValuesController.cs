@@ -3,17 +3,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
+using ASP5API.Models;
 
 namespace ASP5API.Controllers
 {
     [Route("api/[controller]")]
     public class ValuesController : Controller
     {
+        private DataEventRecordContext _context;
+
+        public ValuesController(DataEventRecordContext context)
+        {
+            _context = context;
+        }
         // GET: api/values
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<DataEventRecord> Get()
         {
-            return new string[] { "value1", "value2" };
+            //DataEventRecordContext db = new DataEventRecordContext();
+            //_context.DataEventRecords.Add(new DataEventRecord { Description = "Nummer tre!", Id = 3, Name = "Trean!", Timestamp = DateTime.Now });
+            //_context.DataEventRecords.Add(new DataEventRecord { Description = "Beskrivning", Id = 4, Name = "FOR REALS!", Timestamp = DateTime.Now.AddDays(-1) });
+            //_context.SaveChanges();
+            return _context.DataEventRecords.ToList();
+            //return new string[] { "value1", "value2" };
         }
 
         // GET api/values/5
