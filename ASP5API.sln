@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C5F69E84-3B3B-4A6A-863A-E02F57FE75A6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{35C4E88E-7675-4FDA-94E4-0936D67A09DC}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ASP5API", "src\ASP5API\ASP5API.xproj", "{6EB77678-2534-4D41-9A6D-F9D2A168FB84}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6EB77678-2534-4D41-9A6D-F9D2A168FB84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EB77678-2534-4D41-9A6D-F9D2A168FB84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EB77678-2534-4D41-9A6D-F9D2A168FB84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EB77678-2534-4D41-9A6D-F9D2A168FB84}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6EB77678-2534-4D41-9A6D-F9D2A168FB84} = {C5F69E84-3B3B-4A6A-863A-E02F57FE75A6}
+	EndGlobalSection
+EndGlobal
