@@ -8,6 +8,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
+using ASP5API.Models;
+//using ASP5API.re
+using Microsoft.Data.Entity;
+using Microsoft.Data.Sqlite;
+
 namespace ASP5API
 {
     public class Startup
@@ -28,6 +33,14 @@ namespace ASP5API
         {
             // Add framework services.
             services.AddMvc();
+
+            var connection = "Data Source=C:\\Users\\Olle\\Source\\Repos\\ASP5API\\src\\ASP5API\\dataeventrecords.sqlite"; // Configuration["Production:SqliteConnectionString"];
+
+            services.AddEntityFramework()
+                .AddSqlite()
+                .AddDbContext<DataEventRecordContext>(options => options.UseSqlite(connection));
+
+            //services.AddScoped<IDataEventRecordResporitory, DataEventRecordResporitory>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -41,6 +54,12 @@ namespace ASP5API
             app.UseStaticFiles();
 
             app.UseMvc();
+
+            //Lite seed
+            //DataEventRecordContext db = new DataEventRecordContext();
+            //db.DataEventRecords.Add(new DataEventRecord { Description = "Hej!", Id = 1, Name = "Namn!", Timestamp = DateTime.Now });
+            //db.DataEventRecords.Add(new DataEventRecord { Description = "Hej igen!", Id = 2, Name = "neeeeejm!", Timestamp = DateTime.Now.AddDays(-1) });
+            //db.SaveChanges();
         }
 
         // Entry point for the application.
