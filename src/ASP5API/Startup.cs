@@ -54,6 +54,12 @@ namespace ASP5API
             app.UseStaticFiles();
 
             app.UseMvc();
+
+            //Lite seed
+            //DataEventRecordContext db = new DataEventRecordContext();
+            //db.DataEventRecords.Add(new DataEventRecord { Description = "Hej!", Id = 1, Name = "Namn!", Timestamp = DateTime.Now });
+            //db.DataEventRecords.Add(new DataEventRecord { Description = "Hej igen!", Id = 2, Name = "neeeeejm!", Timestamp = DateTime.Now.AddDays(-1) });
+            //db.SaveChanges();
         }
 
         // Entry point for the application.
