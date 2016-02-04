@@ -35,7 +35,7 @@ namespace ASP5API
             services.AddMvc();
 
             //var connection = "Data Source=C:\\Users\\Olle\\Source\\Repos\\ASP5API\\src\\ASP5API\\dataeventrecords.sqlite"; // Configuration["Production:SqliteConnectionString"];
-            var connection = "Data Source=/user/pi/csharp/ASP5API/src/ASP5API/dataeventrecords.sqlite";
+            var connection = "Data Source=/home/pi/csharp/ASP5API/src/ASP5API/dataeventrecords.sqlite";
             services.AddEntityFramework()
                 .AddSqlite()
                 .AddDbContext<DataEventRecordContext>(options => options.UseSqlite(connection));
